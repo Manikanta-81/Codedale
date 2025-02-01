@@ -1,76 +1,84 @@
 import React from 'react';
-import logo from "../assets/images/Logo.png";
-import RelumeImage from "../assets/images/Relume.png"; 
+import Logo from "../assets/images/Logo1.png";
+import firstImage from "../assets/images/1image.jpg";
+import secondImage from "../assets/images/2image.jpg";
+import thirdImage from "../assets/images/3image.jpg";
 
-function MainSection() {
+function MainNavbar() {
   return (
-    <div className="bg-[#e4e2df] font-sans hover:bg-[#E0DAFF] transition-all duration-300">
-      <div className="grid grid-cols-[0.5fr_1fr_0.5fr] gap-0 justify-between items-center w-[1090.4px] h-[80px] mx-auto">
-
-        <div className="flex items-center">
-          {/* Logo */}
-          <img src={logo} alt="Logo" className="h-auto w-[37px] mb-0 flex-shrink-0" />
-          {/* Relume Logo */}
-          <img src={RelumeImage} alt="Relume Image " className="h-auto w-[111px] mb-0 -ml-1 flex-shrink-0" />
-        </div>
-
-        {/* Center: Navigation Links */}
-        <div className="flex justify-center items-center gap-4 relative">
-            
-          {/* Products Dropdown */}
-          <div className="group relative">
-            <p className="cursor-pointer hover:bg-[var(--light-grey-1)] px-2 py-1 rounded-md flex items-center">
-              Products
-              <span className="ml-2 text-xl transition-transform group-hover:rotate-180">{`↓`}</span> 
-            </p>
-            {/* Dropdown Menu */}
-            <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg p-2 rounded-md mt-1 w-40">
-              <p className="py-1 hover:bg-[var(--light-grey-1)]">Option 1</p>
-              <p className="py-1 hover:bg-[var(--light-grey-1)]">Option 2</p>
-              <p className="py-1 hover:bg-[var(--light-grey-1)]">Option 3</p>
-            </div>
-          </div>
-
-          {/* Community Dropdown */}
-          <div className="group relative">
-            <p className="cursor-pointer hover:bg-[var(--light-grey-1)] px-2 py-1 rounded-md flex items-center">
-              Community
-              <span className="ml-2 text-xl transition-transform group-hover:rotate-180">{`↓`}</span> 
-            </p>
-
-            {/* Dropdown Menu */}
-            <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg p-2 rounded-md mt-1 w-40">
-              <p className="py-1 hover:bg-[var(--light-grey-1)]">Option A</p>
-              <p className="py-1 hover:bg-[var(--light-grey-1)]">Option B</p>
-              <p className="py-1 hover:bg-[var(--light-grey-1)]">Option C</p>
-            </div>
-          </div>
-
-          <p className="cursor-pointer hover:bg-[var(--light-grey-1)] px-2 py-1 rounded-md">Pricing</p>
-          <p className="cursor-pointer hover:bg-[var(--light-grey-1)] px-2 py-1 rounded-md">Learn</p>
-          <p className="cursor-pointer hover:bg-[var(--light-grey-1)] px-2 py-1 rounded-md">Contact Sales</p>
-        </div>
-
-        {/* Right side: Login and Start for Free buttons */}
-        <div className="flex justify-end items-center gap-4">
-          <button className="text-sm py-2 px-4 bg-transparent hover:bg-[var(--light-grey-1)] text-black rounded-md">
-            Login
-          </button>
-
-          {/* Start for Free button */}
-          <button className="text-sm py-2 px-4 bg-black text-white border border-black rounded-md">
-            Start for Free
-          </button>
-        </div>
+    <div className="w-full h-20 px-10 flex items-center justify-between border-b border-gray-200 cursor-pointer text-[16px] text-[#161616] font-sans font-semibold transition-colors duration-300 bg-[#faeeee] hover:bg-[#e0daff]">
+      {/* Logo and Relume*/}
+      <div className="w-[240px] h-[-34px]">
+        <img 
+          src={Logo} 
+          alt="Logo" 
+          className="w-[111px] h-[168px] object-contain"
+        />
       </div>
 
-      {/* Blue line box with border only on left, right, and bottom */}
-      <div className="border-l-2 border-r-2 border-b-2 border-blue-500 w-[97.5vw] h-[78vh] max-h-[46rem] mx-auto transition-all duration-300 absolute inset-[-1rem] top-auto bottom-auto">
-        {/* Content inside the box */}
+      {/* Navigation Items */}
+      <div className="hidden md:flex items-center gap-4">
+        <div className="px-4 py-2 cursor-pointer text-[16px] text-[#161616] font-sans font-semibold hover:text-gray-600">Products</div>
+        <div className="px-4 py-2 cursor-pointer text-[16px] text-[#161616] font-sans font-semibold hover:text-gray-600">Community</div>
+        <div className="px-4 py-2 cursor-pointer text-[16px] text-[#161616] font-sans font-semibold hover:text-gray-600">Pricing</div>
+        <div className="px-4 py-2 cursor-pointer text-[16px] text-[#161616] font-sans font-semibold hover:text-gray-600">Learn</div>
+        <div className="px-4 py-2 cursor-pointer text-[16px] text-[#161616] font-sans font-semibold hover:text-gray-600">Contact Sales</div>
+      </div>
+
+      {/* Auth Section */}
+      <div className="hidden md:flex items-center gap-4">
+        <div className="px-4 py-2 cursor-pointer text-lg text-[#161616] font-sans hover:text-gray-600">Login</div>
         
+        <button className="px-4 py-2 bg-black text-[#FFFFFF] rounded-md font-sans text-lg">
+          Start for free
+        </button>
+      </div>
+
+      {/* Mobile Menu Toggle Button */}
+      <div className="md:hidden flex items-center">
+        <button className="text-black text-2xl">☰</button>
+      </div>
+
+      {/* Blue-bordered Box with Hover Effect */}
+      <div className="border-l-2 border-r-2 border-b-2 border-blue-500 w-[97.5vw] h-[62vh] max-h-[46rem] mx-auto transition-all duration-300 absolute inset-[-1rem] top-[6rem]">
+        
+        {/* Content inside the box */}
+        <div className="home-name-badge absolute top-[70px] left-[500px] flex items-center gap-2">
+          <div className="flex items-center gap-2 border border-gray-300 px-3 py-1 rounded-2xl">
+            <div>
+              <span 
+                className="text-transparent bg-clip-text" 
+                style={{
+                  backgroundImage: 'linear-gradient(100deg, #FF7448, #FF4848 44%, #6248FF 92%)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                }}
+              >
+                400k+
+              </span> Designers
+              <span className="hide-mobile-landscape"> & Devs</span> Build with
+              Relume
+            </div>
+            <div className="new-home-avatars flex items-center gap-1">
+              <img src={firstImage} alt="Avatar 1" className="w-[18px] h-[18px] object-cover rounded-full shadow-lg" />
+              <img src={secondImage} alt="Avatar 2" className="w-[18px] h-[18px] object-cover rounded-full shadow-lg" />
+              <img src={thirdImage} alt="Avatar 3" className="w-[18px] h-[18px] object-cover rounded-full shadow-lg" />
+            </div>
+          </div>
+        </div>
+
+        {/* Heading inside the box */}
+        <h2 className="text-center font-[Relative_Faux] text-[6.5rem] font-medium leading-[1.1] absolute top-[100px] left-[310px] ">
+          Websites designed & 
+        </h2>
+        <h2 className="text-center font-[Relative_Faux] text-[6.5rem] font-medium leading-[1.1] absolute top-[200px] left-[360px]">
+         built faster with AI
+        </h2>
+        <p className="text-[25px] absolute top-[350px] left-[390px] text-gray-600 font-sans text-md  ">Use AI as your design ally, not as a replacement. Effortlessly generate</p>
+        <p className="text-[25px] absolute top-[380px] left-[430px] text-gray-600 font-sans text-md ">sitemaps and wireframes for marketing websites in minutes.</p>
       </div>
     </div>
   );
 }
 
-export default MainSection;
+export default MainNavbar;  
